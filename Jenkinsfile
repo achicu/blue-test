@@ -1,10 +1,10 @@
+import groovy.json.JsonSlurper
+
 pipeline {
   agent any
   stages {
     stage('Setting up the pipeline') {
       steps {
-        import groovy.json.JsonSlurper
-
         def pkgJson = new JsonSlurper().parseText(new File('package.json').getText('UTF-8'))
         echo pkgJson
       }
