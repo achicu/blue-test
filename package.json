@@ -1,0 +1,9 @@
+{
+
+"name": "blue-test",
+"dependencies": {
+"repo1": "git@github.com:achicu/blue-test-2.git"
+
+}
+
+}
