@@ -1,13 +1,17 @@
 import groovy.json.JsonSlurper
 
+def readPackageJson(String file) {
+  def contents = readFileFromWorkspace(file)
+  def pkgJson = new JsonSlurper().parseText(contents)
+  echo pkgJson
+}
+
 pipeline {
   agent any
   stages {
     stage('Setting up the pipeline') {
       steps {
-        def contents = readFileFromWorkspace('package.json')
-        def pkgJson = new JsonSlurper().parseText(contents)
-        echo pkgJson
+        readPackageJson('package.json')
       }
     }
     stage('Check build') {
