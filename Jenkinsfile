@@ -9,6 +9,8 @@ pipeline {
               echo 'macos'
             }
             
+            sh '''echo `pwd`
+ls -la'''
             
           },
           "Run on windows": {
@@ -16,6 +18,8 @@ pipeline {
               echo 'windows'
             }
             
+            sh '''echo `pwd`
+ls -la'''
             
           }
         )
