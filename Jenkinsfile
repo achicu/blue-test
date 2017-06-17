@@ -7,19 +7,19 @@ pipeline {
           "Run on macos": {
             node(label: 'macos') {
               echo 'macos'
+              sh '''echo `pwd`
+ls -la'''
             }
             
-            sh '''echo `pwd`
-ls -la'''
             
           },
           "Run on windows": {
             node(label: 'windows') {
               echo 'windows'
+              sh '''echo `pwd`
+ls -la'''
             }
             
-            sh '''echo `pwd`
-ls -la'''
             
           }
         )
