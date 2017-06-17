@@ -5,8 +5,8 @@ pipeline {
       steps {
         parallel(
           "Run on Windows": {
-            node(label: 'macosx') {
-              echo 'macosx'
+            node(label: 'macos') {
+              echo 'macos'
             }
             
             
