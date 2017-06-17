@@ -16,8 +16,7 @@ ls -la'''
           "Run on windows": {
             node(label: 'windows') {
               echo 'windows'
-              sh '''echo `pwd`
-ls -la'''
+              powershell 'dir'
             }
             
             
