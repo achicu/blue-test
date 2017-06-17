@@ -5,7 +5,7 @@ import groovy.json.JsonSlurper
 def readPackageJson(String file) {
   def contents = readFile(file)
   def pkgJson = new JsonSlurper().parseText(contents)
-  echo pkgJson
+  echo pkgJson.name
 }
 
 pipeline {
