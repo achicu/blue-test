@@ -5,7 +5,8 @@ pipeline {
   stages {
     stage('Setting up the pipeline') {
       steps {
-        def pkgJson = new JsonSlurper().parseText(new File('package.json').getText('UTF-8'))
+        def contents = readFileFromWorkspace('package.json')
+        def pkgJson = new JsonSlurper().parseText(contents)
         echo pkgJson
       }
     }
